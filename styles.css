@@ -1,0 +1,111 @@
+body {
+    color: white;
+    background: #141414; /* Fundo cinza escuro semelhante ao da Netflix */
+    margin: 0;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+header {
+    border-bottom: solid 2px red;
+    padding: 20px;
+    font-size: 32px;
+    color: red;
+    text-align: left;
+    padding-left: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para o texto do header */
+}
+
+.chamada {
+    position: relative;
+    background-color: #141414; /* Fundo cinza escuro para a seção de chamada */
+    padding: 0;
+    margin-top: 20px; /* Ajuste para não colidir com o header */
+    height: 100vh; /* Ocupa a altura total da janela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Garante que o fade não extrapole a seção */
+}
+
+.video-principal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Ocupa toda a largura da janela */
+    height: 100vh; /* Ocupa toda a altura da janela */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1; /* Garante que o vídeo fique acima do conteúdo */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); /* Sombra projetada de baixo para cima */
+}
+
+.video-principal iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.chamada-texto {
+    position: relative;
+    z-index: 2; /* Garante que o texto fique acima do vídeo */
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para o texto do h1 */
+}
+
+p {
+    font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para o texto do parágrafo */
+}
+
+.categoria {
+    padding: 20px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.categoria h2 {
+    color: red;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para o texto do h2 */
+}
+
+.categoria-videos {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.video-card {
+    position: relative;
+    display: block;
+    width: 320px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+.video-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: none;
+}
